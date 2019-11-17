@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ##To use the virtual python environment in "one-shot-envs", do the following:
 conda create --prefix <path of virtual environment> -c menpo python=3.5.4 -y
 cp -rf ./lsfm-envs <path of virtual environment>
@@ -38,3 +39,7 @@ python3 lsfm -i ../input_dir/ -o ../output_dir/ -j 11
 python3 lsfm init /home/u/miniconda2/envs/lsfm/lib/python3.5/site-packages/lsfm/data/template0.ply
 python3 lsfm init /home/u/workspace/practice/3DMM/PublicMM1/01_MorphableModel.mat
 
+=======
+# 3D-Morphable-Model-training
+This program is to train the face 3D morphable model (3DMM)
+>>>>>>> f3b89ce0429047300bf0967a43d7b995b8ca6e2a
