@@ -1,8 +1,8 @@
-<!DOCTYPE PickedPoints> 
-<PickedPoints> 
- <DocumentData> 
-  <DataFileName name="F0009A1EnCtrimR0.ply"/> 
-  <templateName name="F0009A1EnCtrimR0"/> 
- </DocumentData>	
-	 <point x="-3.000710" y="4.378400" z="7.173" name="31" active="1"/>
+<!DOCTYPE PickedPoints>
+<PickedPoints>
+ <DocumentData>
+  <DataFileName name="F0001.ply"/>
+  <templateName name="cccc"/>
+ </DocumentData>
+ <point name="30" active="1" z="-6.273349761962891" x="-0.8448777794837952" y="5.005860805511475"/>
 </PickedPoints>

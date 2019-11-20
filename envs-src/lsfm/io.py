@@ -219,7 +219,8 @@ def path_ply_landmark(r, id_):
     return r / 'ply' / '{}.pp'.format(id_)
 
 def path_texture_jpg(r, id_):
-    return r / 'input_dir' / '{}.jpg'.format(id_)
+    print(r / '{}.jpg'.format(id_))
+    return r / '{}.jpg'.format(id_)
 
 def path_texture_png(r, id_):
     return r / 'input_dir' / '{}.png'.format(id_)
@@ -281,10 +282,9 @@ end_header\n'''.format(mesh.n_points, mesh.n_tris)
 	with open(filename_lm, 'w') as fpp:
 		fpp.write(header)
 		for points in landmarks:
-			for i in range(0,3):
-				fpp.write('\t<point x="' + str(points[0]) + '" y="' + str(points[1]) + '" z="' + str(points[2]) + '" name="' + str(count) + '" active="1"/>\n')
-				count = count + 1				
-			fpp.write('</PickedPoints>')
+			fpp.write('\t<point x="' + str(points[0]) + '" y="' + str(points[1]) + '" z="' + str(points[2]) + '" name="' + str(count) + '" active="1"/>\n')
+			count = count + 1
+		fpp.write('</PickedPoints>')
 
 def getTriMeshfromPly(path):
     data = []

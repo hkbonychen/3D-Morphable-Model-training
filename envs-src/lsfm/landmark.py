@@ -22,7 +22,7 @@ def load_detector():
     return load_dlib_frontal_face_detector()
 
 
-def align_mesh_to_template(source, target, scale_corrective=1.2):
+def align_mesh_to_template(source, target, scale_corrective=0.8):
     scale = Scale((target.norm() / source.norm()) * scale_corrective,
                   n_dims=target.n_dims)
     translation = Translation(target.centre() - source.centre())

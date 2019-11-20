@@ -47,25 +47,41 @@ def save_template_from_mesh(path):
     landmark_ear = []
     nosetip = []
     count = 0
-    with open('/home/u/workspace/VPE/template/ibug100.pp') as pp_file:
+    with open(str(DATA_DIR / 'ibug100.pp')) as pp_file:
         pp_file = csv.reader(pp_file, delimiter='"')
         for row in pp_file:
             count = count + 1
-            if count >= 7 and count < 107:
-                landmark_100.append([float(row[1]), float(row[3]), float(row[5])])
+            if len(row) >= 10:
+                for i in range(0,10,2):
+                    if row[i] == " x=":
+                        lm_x = row[i+1]
+                    if row[i] == " y=":
+                        lm_y = row[i+1]
+                    if row[i] == " z=":
+                        lm_z = row[i+1]
+                if count < 107:
+                    landmark_100.append([float(lm_x), float(lm_y), float(lm_z)])
                 if count < 75:
-                    landmark_68.append([float(row[1]), float(row[3]), float(row[5])])
-            if count >= 84 and count <= 94:
-                landmark_ear.append([float(row[1]), float(row[3]), float(row[5])])
-            if count >= 96 and count <= 106:
-                landmark_ear.append([float(row[1]), float(row[3]), float(row[5])])
+                    landmark_68.append([float(lm_x), float(lm_y), float(lm_z)])
+                if count >= 84 and count <= 94:
+                    landmark_ear.append([float(lm_x), float(lm_y), float(lm_z)])
+                if count >= 96 and count <= 106:
+                    landmark_ear.append([float(lm_x), float(lm_y), float(lm_z)])
     count = 0
-    with open('/home/u/workspace/VPE/template/nosetip.pp') as pp_file:
+    with open(str(DATA_DIR / 'nosetip.pp')) as pp_file:
         pp_file = csv.reader(pp_file, delimiter='"')
         for row in pp_file:
             count = count + 1
-            if count >= 7 and count < 8:
-                nosetip.append([float(row[1]), float(row[3]), float(row[5])])
+            if len(row) >= 10:
+                for i in range(0,10,2):
+                    if row[i] == " x=":
+                        lm_x = row[i+1]
+                    if row[i] == " y=":
+                        lm_y = row[i+1]
+                    if row[i] == " z=":
+                        lm_z = row[i+1]
+                if count < 8:
+                    nosetip.append([float(lm_x), float(lm_y), float(lm_z)])
     template.landmarks['ibug68'] = PointCloud(np.array(landmark_68))
     template.landmarks['ibug100'] = PointCloud(np.array(landmark_100))
     template.landmarks['ibugEar'] = PointCloud(np.array(landmark_ear))

@@ -60,7 +60,6 @@ from lsfm.visualize import visualize_pruning
 
 from lsfm.data import load_template
 from lsfm.verification import extractAlpha, saveObjToEos, extractObjFromEos
-import pcl
 
 landmark_type = 'ibug100'
 #landmark_type = 'ibug68'

@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 ##To use the virtual python environment in "one-shot-envs", do the following:
 conda create --prefix <path of virtual environment> -c menpo python=3.5.4 -y
 cp -rf ./lsfm-envs <path of virtual environment>
 conda activate <path of virtual environment>
-conda install -c menpo suitesparse scikit-sparse cyrasterize
+conda install -c menpo cyvlfeat suitesparse scikit-sparse cyrasterize
 conda install -c anaconda tensorflow-gpu tensorflow-estimator flask
 pip install menpo menpofit menpodetect menpo3d dlib lsfm eos-py python-pcl
 
